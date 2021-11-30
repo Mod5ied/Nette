@@ -1,0 +1,23 @@
+* {
+  // outline: 1px solid #135bbf !important;
+  margin: 0;
+  // padding: 0;
+}
+
+@mixin flexLayout($direction) {
+  display: flex;
+  flex-flow: $direction;
+}
+@mixin row($direction) {
+  justify-content: $direction;
+}
+@mixin column($direction) {
+  align-items: $direction;
+}
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+$background-prim: hsl(0, 0%, 99%);
+$background-sec: hsl(0, 0%, 93%);

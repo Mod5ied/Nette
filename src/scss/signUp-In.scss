@@ -1,0 +1,109 @@
+@import "./_presets.scss";
+
+#main {
+  .mainCircle {
+    #form {
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main {
+    .mainCircle {
+      #form {
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  #main {
+    @include flexLayout(column);
+    @include column(center);
+    @include row(flex-start);
+    background: $background-sec;
+    overflow-y: hidden;
+
+    .circle {
+      width: 99%;
+      height: 21rem;
+      margin: 0.5rem;
+      border-radius: 48%;
+      background: hsl(0, 0%, 98%);
+      position: absolute;
+      top: 8rem;
+    }
+    .ion {
+      color: #0275d8;
+    }
+    .mainContainer {
+      @include flexLayout(column);
+      @include column(center);
+      @include row(center);
+      gap: 1rem;
+      width: 90%;
+      height: 23rem;
+      padding: 0.4rem 0;
+      margin: 8rem 0;
+      border: 1px solid rgba(190, 190, 190, 0.267);
+      border-radius: 0.8rem;
+      position: relative;
+      z-index: 2;
+      background: $background-prim;
+
+      #titleSpan {
+        @include flexLayout(row);
+        @include row(space-between);
+        width: 95%;
+        padding: 0 0.8rem;
+
+        .ion {
+          margin: auto 0;
+          width: 2rem;
+          height: 1rem;
+        }
+      }
+
+      #form {
+        @include gridCenter;
+        width: 95%;
+        height: 16rem;
+        padding: 0 0.3rem;
+
+        .input {
+          @include flexLayout(row);
+          border-radius: .7rem;
+          border: 1px solid #0274d823;
+          
+          .inputBox {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: .7rem;
+            outline: none;
+          }
+          img {
+            width: 2rem;
+            height: 0.9rem;
+            border: 1px solid #0275d8;
+          }
+        }
+        .formBtn {
+          width: 100%;
+          padding: 0.7rem;
+          border: none;
+          border-radius: 0.5rem;
+          background: #0275d8;
+          color: $background-prim;
+        }
+      }
+      #footer {
+        width: 100%;
+        text-align: center;
+        font-size: 0.89rem;
+        .route{
+          color: #0275d8;
+        }
+      }
+    }
+  }
+}

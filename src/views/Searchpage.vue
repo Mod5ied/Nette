@@ -1,0 +1,50 @@
+<template>
+  <div id="main">
+    <Header :title="title" />
+    <form>
+      <span class="nav">
+        <img src="../assets/search_black_24dp.svg" class="searchBtn" />
+        <input
+          type="text"
+          class="inputBox"
+          placeholder="Search for anything!"
+        />
+      </span>
+    </form>
+    <section id="gallery" class="gallery">
+      <ul class="galleryContainer">
+        <li>
+          <img src="../assets/IMG_20200701_225758.jpg" alt="" />
+          <p>yes</p>
+        </li>
+        <li>Y</li>
+        <li>Z</li>
+        <li>M</li>
+        <li>M</li>
+        <li>M</li>
+        <li>M</li>
+      </ul>
+    </section>
+    <Footer />
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import Header from "../components/header.vue";
+import Footer from "../components/footer.vue";
+
+export default defineComponent({
+  setup() {
+    const title = ref<String>("Searchpage");
+    return {
+      title,
+    };
+  },
+  components: { Header, Footer },
+});
+</script>
+
+<style lang="scss" scoped>
+@import "../scss/search.scss";
+</style>
