@@ -23,6 +23,7 @@
         <li>M</li>
         <li>M</li>
         <li>M</li>
+        <li>M</li>
       </ul>
     </section>
     <Footer />
@@ -36,7 +37,7 @@ import Footer from "../components/footer.vue";
 
 export default defineComponent({
   setup() {
-    const title = ref<String>("Searchpage");
+    const title = ref<String>("𝘕𝘦𝘵𝘵𝘦");
     return {
       title,
     };
