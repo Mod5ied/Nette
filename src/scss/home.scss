@@ -1,63 +1,56 @@
 @import "./_presets.scss";
-#main {
-  height: 100%;
-}
-@media screen and (max-width: 1024px) {
+@media (max-width: 500px) {
   #main {
     @include flexLayout(column);
     @include column(center);
-    // height: 100vh;
-  }
-}
-@media screen and (max-width: 480px) {
-  #main {
-    @include flexLayout(column);
-    @include column(center);
-    gap: 1rem;
+    gap: 2.2rem;
     height: 100vh;
 
     #sec1 {
       padding: 1rem;
-      margin: 1.5rem 0;
     }
     #sec2 {
       @include flexLayout(row);
       @include row(flex-start);
       gap: 2rem;
       width: 100%;
-      padding: 0 1.5rem;
+      height: 10rem;
+      padding: 0 2rem;
       overflow-x: scroll;
-
+0
       .cardCover {
         @include flexLayout(column);
         @include column(center);
-        width: 30%;
+        @include gridCenter;
+        width: 7rem;
+        height: 7rem;
         gap: 0.4rem;
         padding: 0.7rem;
-        margin: 0.4rem 1rem;
+        margin: auto 1rem;
 
-        .image {
+        .image1 {
           @include gridCenter;
           width: 4rem;
           height: 4rem;
           padding: 1rem;
           border-radius: 3rem;
-          border:1px solid hsla(0, 0%, 0%, 0.6);
+          border: 1px solid hsla(0, 0%, 0%, 0.6);
         }
         .imageDesc {
           @include gridCenter;
-          width: 5em;
-          font-size: .8rem;
+          width: 5rem;
+          font-size: 0.8rem;
           font-weight: 500;
         }
-      }.four{
-        #image{
+      }
+      .four {
+        #image {
           width: 2rem;
-          height: 2rem;
+          height: 2rem; 
           padding: 1rem;
           // font-size: .8rem;
           border-radius: 3rem;
-          border:1px solid hsla(0, 0%, 0%, 0.6);
+          border: 1px solid hsla(0, 0%, 0%, 0.6);
         }
       }
     }
@@ -65,30 +58,158 @@
       @include flexLayout(column);
       @include row(center);
       @include column(flex-start);
-      // @include gridCenter;
       gap: 2rem;
       width: 100%;
-      margin: 1rem 0;
       padding: 1rem;
 
-      h3 {
+      h2 {
+        width: 70%;
       }
 
       .stack {
-        @include flexLayout(row);
+        @include flexLayout(row wrap);
         @include row(center);
         @include column(center);
-        width: 100%;
-        margin: auto 0;
-        gap: 1rem;
+        width: 90%;
+        height: 10rem;
+        margin: 0 auto;
+        gap: 2rem;
         list-style: none;
         // border-radius: 10px;
 
-        .image {
-          width: 100%;
+        .image2 {
+          width: 40%;
           height: 8rem;
+          // border-radius: 0.4rem;
+        }
+        .mobilehidden {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #main {
+    height: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #main {
+    @include flexLayout(column);
+    @include column(center);
+    gap: 4rem;
+    height: 100vh;
+
+    #sec1 {
+      padding: 2rem 1rem;
+      width: 90%;
+
+      p {
+        width: 75%;
+        text-align: left;
+      }
+    }
+    #sec2 {
+      @include flexLayout(row);
+      @include row(center);
+      gap: 1rem;
+      padding: 2rem 3rem;
+      width: 90%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      .cardCover {
+        // @include gridCenter;
+        @include flexLayout(column);
+        @include row(center);
+        @include column(center);
+        gap: 1rem  ;
+        padding: 1rem;
+        min-width: 8rem;
+        max-width: 8rem;
+        height: 8rem;
+        border-radius: .9rem;
+
+        .image1 {
+          @include gridCenter;
+          width: 5rem;
+          height: 5rem;
           padding: 1rem;
-          border-radius: 0.4rem;
+          border-radius: 3rem;
+          border: 1px solid hsla(0, 0%, 0%, 0.6);
+        }
+        // #image {
+        //   // // @include gridCenter;
+        //   // font-size: 3rem;
+        //   // width: 5.5rem;
+        //   // height: 6rem;
+        //   // // padding: auto; 
+        //   // border-radius: 1rem;
+        //   width: 4rem;
+        //   height: 4rem; 
+        //   padding: 1rem;
+        //   // font-size: .8rem;
+        //   border-radius: 3rem;
+        //   border: 1px solid hsla(0, 0%, 0%, 0.6);
+        // }
+      }
+      .four {
+        min-width: 9rem;
+        max-width: 9rem;
+        height: 9rem;
+        #image {
+          width: 2rem;
+          height: 2rem; 
+          padding: 1rem;
+          // font-size: 2rem;
+          border-radius: 3rem;
+          border: 1px solid hsla(0, 0%, 0%, 0.6);
+        }
+      }
+    }
+    #sec3 {
+      @include flexLayout(column);
+      @include row(flex-start);
+      gap: 2rem;
+      padding: 1rem;
+      width: 90%;
+
+      h3 {
+        width: 50%;
+      }
+      .stack {
+        @include flexLayout(row wrap);
+        @include row(center);
+        gap: 2.5rem;
+        width: 30rem;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        border-radius: 1rem;
+
+        .image2 {
+          @include gridCenter;
+          width: 8rem;
+          height: 8rem;
+          border-radius: 5rem;
+          border: 1px solid hsla(0, 0%, 0%, 0.6);
+          overflow: hidden;
+        }
+        .one,
+        .three,
+        .six {
+          width: 5rem;
+          height: 5rem;
+        }
+        .two,
+        .four {
+          width: 9rem;
+          height: 9rem;
+        }
+         .five {
+           width: 7rem;
+           height: 7rem;
         }
       }
     }

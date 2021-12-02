@@ -10,19 +10,19 @@
     </section>
     <section id="sec2">
       <div class="cardCover one">
-        <img src="../assets/palette_black_24dp.svg" class="image" />
+        <img src="../assets/palette_black_24dp.svg" class="image1" />
         <span class="imageDesc">ART</span>
       </div>
       <div class="cardCover two">
-        <img src="../assets/pets_black_24dp.svg" class="image">
+        <img src="../assets/pets_black_24dp.svg" class="image1" />
         <span class="imageDesc">PETS</span>
       </div>
       <div class="cardCover three">
-        <img src="../assets/houses_black_24dp.svg" class="image"/>
+        <img src="../assets/houses_black_24dp.svg" class="image1" />
         <span class="imageDesc">BUILDINGS</span>
       </div>
-      <div class="cardCover four">
-        <img src="../assets/park_black_24dp.svg" class="image">
+      <div class="cardCover ">
+        <img src="../assets/park_black_24dp.svg" class="image1" />
         <span class="imageDesc">PLANTS</span>
       </div>
       <div class="cardCover four">
@@ -31,10 +31,16 @@
       </div>
     </section>
     <section id="sec3">
-      <h3>Lorem fiverso dolor sit</h3>
+      <h2>Lorem ipsum dolor, sit amet caonsectetur.</h2>
       <div class="stack">
-        <li class="image">Image1</li>
-        <li class="image">Image2</li>
+        <!-- <img src="../assets/paint_logo-11.jpg" class="image2" /> -->
+        <li class="image2 one">Image1</li>
+        <li class="image2 two">Image2</li>
+        <li class="image2 three mobilehidden">Image3</li>
+        <li class="image2 four mobilehidden">Image4</li>
+        <li class="image2 five mobilehidden">Image5</li>
+        <li class="image2 six mobilehidden">Image6</li>
+
       </div>
     </section>
     <Footer />
