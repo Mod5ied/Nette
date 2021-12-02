@@ -6,7 +6,65 @@
   padding: 0 0.5rem;
 }
 @media screen and (max-width: 1024px) {
+  //  HERE IS THE HEADER STYLING
   #header {
+    @include flexLayout(row);
+    @include row(space-between);
+    @include column(center);
+    width: 100%;
+    padding: 0 2.5rem;
+
+    h1 {
+      @include gridCenter;
+    }
+    #user {
+      @include gridCenter;
+      margin: auto;
+      width: 2rem;
+      height: 2rem;
+      // padding: .5rem 0;
+      font-size: 1.5rem;
+      border-radius: 12.2rem;
+    }
+  }
+  // HERE IS THE FOOTER STYLING
+  #footer {
+    @include flexLayout(row);
+    @include row(center);
+    width: 50%;
+    padding: 0.3rem;
+    border-radius: 1.8rem;
+    background: hsla(0, 0%, 0%, 0.6);
+    position: fixed;
+    z-index: 99;
+    bottom: 0.4rem;
+
+    .footerContainer {
+      @include flexLayout(row);
+      @include row(space-around);
+      width: 100%;
+      gap: 6rem;
+
+      #home {
+        @include gridCenter;
+        border-radius: 1.3rem;
+        overflow: hidden;
+        position: relative;
+        background: hsla(0, 0%, 50%, 0.6);
+        img {
+          padding: 0.4rem;
+        }
+      }
+      #search {
+        @include gridCenter;
+        border-radius: 1.3rem;
+        overflow: hidden;
+        background: hsla(0, 0%, 50%, 0.6);
+        img {
+          padding: 0.4rem;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 480px) {
