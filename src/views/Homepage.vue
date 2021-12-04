@@ -5,8 +5,13 @@
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est a dolorum
         repellendus asperiores, tempora quidem nostrum accusamus repellat cum
-        sapiente.
+        sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+        et temporibus atque ad aliquid consequatur veritatis possimus reiciendis
+        distinctio repellendus?
       </p>
+    </section>
+    <section class="image" id="mobilehidden">
+      <img src="../assets/IMG_20200701_225758.jpg" alt="" />
     </section>
     <section id="sec2">
       <div class="cardCover one">
@@ -19,9 +24,9 @@
       </div>
       <div class="cardCover three">
         <img src="../assets/houses_black_24dp.svg" class="image1" />
-        <span class="imageDesc">BUILDINGS</span>
+        <span class="imageDesc">HOUSES</span>
       </div>
-      <div class="cardCover ">
+      <div class="cardCover">
         <img src="../assets/park_black_24dp.svg" class="image1" />
         <span class="imageDesc">PLANTS</span>
       </div>
@@ -40,7 +45,6 @@
         <li class="image2 four mobilehidden">Image4</li>
         <li class="image2 five mobilehidden">Image5</li>
         <li class="image2 six mobilehidden">Image6</li>
-
       </div>
     </section>
     <Footer />

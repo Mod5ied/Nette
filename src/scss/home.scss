@@ -9,6 +9,9 @@
     #sec1 {
       padding: 1rem;
     }
+    #mobilehidden {
+      display: none;
+    }
     #sec2 {
       @include flexLayout(row);
       @include row(flex-start);
@@ -17,7 +20,7 @@
       height: 10rem;
       padding: 0 2rem;
       overflow-x: scroll;
-0
+
       .cardCover {
         @include flexLayout(column);
         @include column(center);
@@ -46,7 +49,7 @@
       .four {
         #image {
           width: 2rem;
-          height: 2rem; 
+          height: 2rem;
           padding: 1rem;
           // font-size: .8rem;
           border-radius: 3rem;
@@ -89,18 +92,16 @@
     }
   }
 }
-
-@media (min-width: 1024px) {
-  #main {
-    height: 100%;
-  }
-}
 @media (min-width: 768px) and (max-width: 1024px) {
   #main {
     @include flexLayout(column);
     @include column(center);
     gap: 4rem;
     height: 100vh;
+
+    #mobilehidden {
+      display: none;
+    }
 
     #sec1 {
       padding: 2rem 1rem;
@@ -113,24 +114,22 @@
     }
     #sec2 {
       @include flexLayout(row);
-      @include row(center);
-      gap: 1rem;
-      padding: 2rem 3rem;
-      width: 90%;
+      @include row(flex-start);
+      gap: 4rem;
+      padding: 0 3rem;
+      height: 10rem;
+      width: 100%;
       overflow-x: scroll;
-      overflow-y: hidden;
 
       .cardCover {
-        // @include gridCenter;
-        @include flexLayout(column);
-        @include row(center);
-        @include column(center);
-        gap: 1rem  ;
+        @include gridCenter;
+        gap: .6rem;
         padding: 1rem;
         min-width: 8rem;
         max-width: 8rem;
         height: 8rem;
-        border-radius: .9rem;
+        border-radius: 0.9rem;
+        margin: auto 0;
 
         .image1 {
           @include gridCenter;
@@ -140,30 +139,15 @@
           border-radius: 3rem;
           border: 1px solid hsla(0, 0%, 0%, 0.6);
         }
-        // #image {
-        //   // // @include gridCenter;
-        //   // font-size: 3rem;
-        //   // width: 5.5rem;
-        //   // height: 6rem;
-        //   // // padding: auto; 
-        //   // border-radius: 1rem;
-        //   width: 4rem;
-        //   height: 4rem; 
-        //   padding: 1rem;
-        //   // font-size: .8rem;
-        //   border-radius: 3rem;
-        //   border: 1px solid hsla(0, 0%, 0%, 0.6);
-        // }
       }
       .four {
         min-width: 9rem;
         max-width: 9rem;
-        height: 9rem;
+        height: 8.5rem;
         #image {
-          width: 2rem;
-          height: 2rem; 
+          width: 3rem;
+          height: 3rem;
           padding: 1rem;
-          // font-size: 2rem;
           border-radius: 3rem;
           border: 1px solid hsla(0, 0%, 0%, 0.6);
         }
@@ -183,7 +167,7 @@
         @include flexLayout(row wrap);
         @include row(center);
         gap: 2.5rem;
-        width: 30rem;
+        width: 33rem;
         padding: 1rem 2rem;
         margin: 0 auto;
         border-radius: 1rem;
@@ -207,9 +191,98 @@
           width: 9rem;
           height: 9rem;
         }
-         .five {
-           width: 7rem;
-           height: 7rem;
+        .five {
+          width: 7rem;
+          height: 7rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  #main {
+    // height: 100%;
+    @include flexLayout(row wrap);
+    @include row(center);
+    gap: 2rem;
+
+    #sec1 {
+      @include flexLayout(column);
+      @include column(center);
+      width: 80%;
+      flex: 40%;
+      padding: 0.5rem;
+
+      p {
+        width: 80%;
+      }
+    }
+    #mobilehidden {
+      @include flexLayout(column);
+      flex: 40%;
+      padding: 0.5rem 2rem;
+
+      img {
+        width: 80%;
+        height: 80%;
+      }
+    }
+    #sec2 {
+      @include flexLayout(row);
+      @include row(space-around);
+      flex: 90%;
+      width: 100%;
+      padding: 1.4rem;
+      height: 10rem;
+
+      .cardCover {
+        @include flexLayout(row);
+        @include row(center);
+        @include column(center);
+        gap: 1rem;
+        padding: 0.5rem;
+        height: 5rem;
+
+        .image1 {
+          border-radius: 1.8rem;
+          width: 4rem;
+          height: 4rem;
+        }
+
+        .imageDesc {
+          @include gridCenter;
+          height: 50%;
+        }
+      }
+      .four {
+        #image {
+          font-size: 4.2rem;
+          border-radius: 2rem;
+        }
+      }
+    }
+    #sec3 {
+      @include flexLayout(column);
+      @include row(center);
+      flex: 90%;
+      padding: 2rem;
+      gap: 1.5rem;
+
+      .stack {
+        @include flexLayout(row wrap);
+        @include row(space-around);
+        gap: 2rem;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0.5rem;
+        list-style: none;
+
+        .image2 {
+          @include gridCenter;
+          width: 15rem;
+          height: 10rem;
+          flex: 30%;
+          border-radius: .5rem;
         }
       }
     }
