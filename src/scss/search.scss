@@ -1,7 +1,91 @@
 @import "./_presets.scss";
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   #main {
-    height: 100%;
+    @include flexLayout(column);
+    @include column(center);
+    gap: 1rem;
+
+    form {
+      @include gridCenter;
+      margin: 0 1rem;
+      width: 85%;
+      height: 5rem;
+      margin: 3rem 0;
+
+      .nav {
+        @include flexLayout(row);
+        @include row(center);
+        @include column(center);
+        width: 40%;
+        padding: 0.9rem 0.9rem;
+
+        .inputBox {
+          width: 100%;
+          padding: .4rem 3.5rem;
+          border: none;
+          outline: none;
+          border: 1px solid #135bbf42;
+          border: none;
+          border-radius: 1.5rem;
+          background: hsla(0, 0%, 0%, 0.418);
+          color: hsl(0, 0%, 80%);
+          font-size: 1.1rem;
+        }
+        .searchBtn {
+          position: absolute;
+          left: 34%;
+          border-radius: 1.2rem;
+          padding: 0.38rem;
+          background: hsla(0, 0%, 0%, 0.3);
+        }
+        .inputBox:focus {
+          border: none;
+        }
+      }
+    }
+    .gallery {
+      width: 85%;
+      
+      .galleryContainer {
+        @include flexLayout(row wrap);
+        @include row(center);
+        padding: 0.5rem;
+        max-width: 100%;
+        gap: 2rem;
+        list-style: none;
+
+        li {
+          @include flexLayout(column);
+          @include column(center);
+          gap: 0.3rem;
+          max-width: 20rem;
+          min-width: 20rem;
+          flex: 28%;
+          height: 17rem;
+          border-radius: 0.4rem;
+          overflow: hidden;
+
+          img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+          p {
+            position: relative;
+            bottom: 50%;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+          }
+        }
+        li:hover{
+          p{
+            display: block;
+          }
+        }
+      }
+    }
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -21,7 +105,7 @@
         @include row(center);
         @include column(center);
         width: 70%;
-        padding: 0.9rem .9rem;
+        padding: 0.9rem 0.9rem;
         // margin: 1rem 0;
 
         .inputBox {
@@ -41,9 +125,9 @@
           left: 19%;
           border-radius: 1.2rem;
           padding: 0.38rem;
-          background:hsla(0, 0%, 0%, 0.3);
+          background: hsla(0, 0%, 0%, 0.3);
         }
-        .inputBox:focus{
+        .inputBox:focus {
           border: 1px solid hsla(0, 0%, 0%, 0.192);
         }
       }
@@ -101,7 +185,7 @@
         @include row(center);
         @include column(center);
         width: 85%;
-        padding: 0.9rem .9rem;
+        padding: 0.9rem 0.9rem;
         // margin: 1rem 0;
 
         .inputBox {
@@ -120,9 +204,9 @@
           left: 14%;
           border-radius: 1.2rem;
           padding: 0.38rem;
-          background:hsla(0, 0%, 0%, 0.3);
+          background: hsla(0, 0%, 0%, 0.3);
         }
-        .inputBox:focus{
+        .inputBox:focus {
           border: 1px solid hsla(0, 0%, 0%, 0.192);
         }
       }

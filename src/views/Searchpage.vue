@@ -15,7 +15,7 @@
       <ul class="galleryContainer">
         <li>
           <img src="../assets/IMG_20200701_225758.jpg" alt="" />
-          <p>yes</p>
+           <p>Image One</p>
         </li>
         <li>Y</li>
         <li>Z</li>
