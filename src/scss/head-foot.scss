@@ -5,10 +5,10 @@
     @include row(space-between);
     gap: 3.5rem;
     width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
 
-    #title {
-      font-size: 1.2rem;
+    h1 {
+      font: 600 1rem $font-prim;
     }
 
     .switchtabs {
@@ -19,6 +19,11 @@
         @include flexLayout(row);
         padding: 0.5rem;
         gap: 3rem;
+
+        .links{
+          font: 400 .8rem $font-prim;
+          color:hsla(0, 0%, 0%, 0.6);
+        }
       }
     }
     #user {
@@ -28,6 +33,7 @@
       height: 2rem;
       font-size: 1.5rem;
       border-radius: 12.2rem;
+      border: 1px solid #ddd;
     }
   }
   #footer {
@@ -49,6 +55,7 @@
 
     h1 {
       @include gridCenter;
+      font: 600 1rem $font-prim;
     }
     #user {
       @include gridCenter;
@@ -108,6 +115,8 @@
     @include column(center);
     width: 100%;
     padding: 0 0.3rem;
+    position: fixed;
+    top: 0;
 
     #hiddenMob {
       display: none;
@@ -115,6 +124,7 @@
 
     h1 {
       @include gridCenter;
+      font: 600 1rem $font-prim;
     }
     #user {
       @include gridCenter;

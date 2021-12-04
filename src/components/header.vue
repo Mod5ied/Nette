@@ -5,10 +5,12 @@
     >
     <nav class="switchtabs" id="hiddenMob">
       <div class="footerContainer">
-        <router-link :to="{ name: 'Home' }" id="home">Home</router-link>
+        <router-link class="links" :to="{ name: 'Home' }" id="home"
+          >Home</router-link
+        >
 
-        <router-link :to="{ name: 'Search' }" id="search">
-          Search
+        <router-link class="links" :to="{ name: 'Search' }" id="search"
+          >Search
         </router-link>
       </div>
     </nav>
