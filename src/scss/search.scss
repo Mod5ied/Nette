@@ -21,7 +21,7 @@
 
         .inputBox {
           width: 100%;
-          padding: .4rem 3.5rem;
+          padding: 0.5rem 3.5rem;
           border: none;
           outline: none;
           border: 1px solid #135bbf42;
@@ -29,7 +29,7 @@
           border-radius: 1.5rem;
           background: hsla(0, 0%, 0%, 0.418);
           color: hsl(0, 0%, 80%);
-          font-size: 1.1rem;
+          font: 400 1.1rem $font-prim;
         }
         .searchBtn {
           position: absolute;
@@ -45,7 +45,7 @@
     }
     .gallery {
       width: 85%;
-      
+
       .galleryContainer {
         @include flexLayout(row wrap);
         @include row(center);
@@ -75,12 +75,12 @@
             bottom: 50%;
             width: 100%;
             text-align: center;
-            font-weight: 500;
+            font: 500 1rem $font-prim;
             display: none;
           }
         }
-        li:hover{
-          p{
+        li:hover {
+          p {
             display: block;
           }
         }
@@ -105,12 +105,11 @@
         @include row(center);
         @include column(center);
         width: 70%;
-        padding: 0.9rem 0.9rem;
-        // margin: 1rem 0;
+        padding: 0.6em 0.9rem;
 
         .inputBox {
           width: 100%;
-          padding: 0.75rem 3.5rem;
+          padding: 0.6rem 3.5rem;
           border: none;
           outline: none;
           border: 1px solid #135bbf42;
@@ -118,7 +117,7 @@
           border-radius: 1.5rem;
           background: hsla(0, 0%, 0%, 0.418);
           color: $background-sec;
-          font-size: 1.2rem;
+          font: 450 1rem $font-prim;
         }
         .searchBtn {
           position: absolute;
@@ -141,7 +140,6 @@
         @include row(center);
         max-width: 100%;
         gap: 2rem;
-        // margin: 0.5rem;
         list-style: none;
 
         li {
@@ -179,6 +177,8 @@
       width: 95%;
       height: 5rem;
       margin: 1rem 0;
+      position: relative;
+      top: 4rem;
 
       .nav {
         @include flexLayout(row);
@@ -186,7 +186,6 @@
         @include column(center);
         width: 85%;
         padding: 0.9rem 0.9rem;
-        // margin: 1rem 0;
 
         .inputBox {
           width: 100%;
@@ -201,10 +200,11 @@
         }
         .searchBtn {
           position: absolute;
-          left: 14%;
+          left: 11.9%;
           border-radius: 1.2rem;
           padding: 0.38rem;
           background: hsla(0, 0%, 0%, 0.3);
+          font: 400 1rem $font-prim;
         }
         .inputBox:focus {
           border: 1px solid hsla(0, 0%, 0%, 0.192);
@@ -214,13 +214,14 @@
     .gallery {
       padding: 0.5rem;
       width: 95%;
+      position: relative;
+      top: 4rem;
 
       .galleryContainer {
         @include flexLayout(row wrap);
         @include row(center);
         max-width: 100%;
         gap: 2rem;
-        // margin: 0.5rem;
         list-style: none;
 
         li {
@@ -239,6 +240,7 @@
           }
           p {
             width: 100%;
+            font: 450 0.78rem $font-prim;
             text-align: center;
           }
         }
