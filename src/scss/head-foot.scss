@@ -1,9 +1,38 @@
 @import "./_presets.scss";
-#header {
-  @include flexLayout(row);
-  @include row(space-between);
-  width: 100%;
-  padding: 0 0.5rem;
+@media (min-width: 1024px) {
+  #header {
+    @include flexLayout(row);
+    @include row(space-between);
+    gap: 3.5rem;
+    width: 100%;
+    padding: 0 0.5rem;
+
+    #title {
+      font-size: 1.2rem;
+    }
+
+    .switchtabs {
+      @include gridCenter;
+      margin-right: auto;
+
+      .footerContainer {
+        @include flexLayout(row);
+        padding: 0.5rem;
+        gap: 3rem;
+      }
+    }
+    #user {
+      @include gridCenter;
+      margin: auto;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      border-radius: 12.2rem;
+    }
+  }
+  #footer {
+    display: none;
+  }
 }
 @media screen and (max-width: 1024px) {
   //  HERE IS THE HEADER STYLING
@@ -13,6 +42,10 @@
     @include column(center);
     width: 100%;
     padding: 0 2.5rem;
+
+    #hiddenMob {
+      display: none;
+    }
 
     h1 {
       @include gridCenter;
@@ -75,6 +108,10 @@
     @include column(center);
     width: 100%;
     padding: 0 0.3rem;
+
+    #hiddenMob {
+      display: none;
+    }
 
     h1 {
       @include gridCenter;

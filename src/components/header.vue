@@ -1,6 +1,17 @@
 <template>
   <header id="header" class="navbar has-shadow">
-    <i class="navbar-brand"> <h1 id="title" class="navbar-item"> {{title}} </h1></i>
+    <i class="navbar-brand">
+      <h1 id="title" class="navbar-item">{{ title }}</h1></i
+    >
+    <nav class="switchtabs" id="hiddenMob">
+      <div class="footerContainer">
+        <router-link :to="{ name: 'Home' }" id="home">Home</router-link>
+
+        <router-link :to="{ name: 'Search' }" id="search">
+          Search
+        </router-link>
+      </div>
+    </nav>
     <i class="navbar-end"><i id="user" class="fas fa-user-circle"></i></i>
   </header>
 </template>
