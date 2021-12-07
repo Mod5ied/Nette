@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <img src="../assets/image4.jpg" id="main-img" alt="" />
     <Header :title="title" />
     <form>
       <span class="nav">
@@ -14,8 +15,8 @@
     <section id="gallery" class="gallery">
       <ul class="galleryContainer">
         <li>
-          <img src="../assets/IMG_20200701_225758.jpg" alt="" />
-           <p>Image One</p>
+          <img src="../assets/image1.jpg" alt="" />
+          <p>Image One</p>
         </li>
         <li>Y</li>
         <li>Z</li>

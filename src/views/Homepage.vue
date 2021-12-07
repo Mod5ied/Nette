@@ -1,49 +1,50 @@
 <template>
   <div id="main">
+    <img src="../assets/image4.jpg" id="main-img" alt="" />
     <Header :title="title" />
-      <section id="sec1">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est a
-          dolorum repellendus asperiores, tempora quidem nostrum accusamus
-          repellat cum sapiente.
-        </p>
-      </section>
-      <section class="image" id="mobilehidden">
-        <img src="../assets/IMG_20200701_225758.jpg" alt="" />
-      </section>
-      <section id="sec2">
-        <div class="cardCover one">
-          <i class="fas fa-palette image1"></i>
-          <span class="imageDesc">ART</span>
-        </div>
-        <div class="cardCover two">
-          <i class="fas fa-paw image1"></i>
-          <span class="imageDesc">PETS</span>
-        </div>
-        <div class="cardCover three">
-          <i class="far fa-building image1"></i>
-          <span class="imageDesc">HOUSES</span>
-        </div>
-        <div class="cardCover">
-          <i class="fab fa-pagelines image1"></i>
-          <span class="imageDesc">PLANTS</span>
-        </div>
-        <div class="cardCover four">
-          <i class="fas fa-car image1"></i>
-          <span class="imageDesc">CARS</span>
-        </div>
-      </section>
-      <section id="sec3">
-        <h2>Exhibition</h2>
-        <div class="stack">
-          <li class="image2 one">Image1</li>
-          <li class="image2 two">Image2</li>
-          <li class="image2 three mobilehidden">Image3</li>
-          <li class="image2 four mobilehidden">Image4</li>
-          <li class="image2 five mobilehidden">Image5</li>
-          <li class="image2 six mobilehidden">Image6</li>
-        </div>
-      </section>
+    <section id="sec1">
+      <p>
+        Searching for photo collecions is as easy as typing in some few words
+        and baam! your gallery. Go through our large repository of images and
+        find the pixel-perfect photo you desire - Nette.
+      </p>
+    </section>
+    <section class="image" id="mobilehidden">
+      <img src="../assets/IMG_20200701_225758.jpg" alt="" />
+    </section>
+    <section id="sec2">
+      <div class="cardCover one">
+        <i class="fas fa-palette image1"></i>
+        <span class="imageDesc">Arts</span>
+      </div>
+      <div class="cardCover two">
+        <i class="fas fa-paw image1"></i>
+        <span class="imageDesc">Pets</span>
+      </div>
+      <div class="cardCover three">
+        <i class="far fa-building image1"></i>
+        <span class="imageDesc">Houses</span>
+      </div>
+      <div class="cardCover">
+        <i class="fab fa-pagelines image1"></i>
+        <span class="imageDesc">Plants</span>
+      </div>
+      <div class="cardCover four">
+        <i class="fas fa-car image1"></i>
+        <span class="imageDesc">Cars</span>
+      </div>
+    </section>
+    <section id="sec3">
+      <h2>Exhibition</h2>
+      <div class="stack">
+        <img src="../assets/image7.jpg" class="image2 one" />
+        <img src="../assets/image3.jpg" class="image2 two" />
+        <img src="../assets/image1.jpg" class="image2 three mobilehidden" />
+        <img src="../assets/image2.jpg" class="image2 four mobilehidden" />
+        <img src="../assets/image6.jpg" class="image2 five mobilehidden" />
+        <img src="../assets/image4.jpg" class="image2 six mobilehidden" />
+      </div>
+    </section>
     <Footer />
   </div>
 </template>

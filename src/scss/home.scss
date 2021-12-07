@@ -1,22 +1,35 @@
 @import "./_presets.scss";
 @media (max-width: 500px) {
+  html,
+  body {
+    background: black;
+  }
   #main {
     @include flexLayout(column);
     @include column(center);
     @include row(center);
-    gap: 2.2rem;
-    height: 100vh;
+    gap: 2rem;
+    height: 90vh;
+
+    #main-img {
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
 
     #sec1 {
       padding: 1rem;
-      border: 1px solid red;
       height: 10rem;
       position: relative;
-      top: 2rem;
+      z-index: 2;
+      top: 4rem;
 
       p {
         font: 300 1rem $font-prim;
-        color: red;
+        color: #404040;
       }
     }
     #mobilehidden {
@@ -25,15 +38,18 @@
     #sec2 {
       @include flexLayout(row);
       @include row(flex-start);
-      gap: 2rem;
-      padding: 0 3rem;
+      gap: 0.85rem;
+      padding: 0 1rem;
       margin: -1rem 0;
       height: 10rem;
       width: 100%;
-      border: 1px solid red;
       position: relative;
       top: 8%;
+      z-index: 2;
       overflow-x: scroll;
+      // overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
 
       .cardCover {
         @include gridCenter;
@@ -41,6 +57,8 @@
         gap: 0.4rem;
         padding: 0.7rem;
         margin: auto 1rem;
+        // outline: 1px solid #00800057;
+        border-radius: 0.5rem;
 
         .image1 {
           @include gridCenter;
@@ -48,15 +66,26 @@
           height: 4rem;
           font-size: 1.5rem;
           padding: 1rem;
-          border-radius: 3rem;
+          color: #74270c;
+          color: #008000;
+          outline: 1px solid #00800081;
+          border-radius: 2rem;
           border: 1px solid hsla(0, 0%, 0%, 0.6);
         }
         .imageDesc {
           @include gridCenter;
           width: 5rem;
           font: 700 0.89rem $font-sec;
+          color: #404040;
+          outline: 1px solid #00800081;
+          border-radius: 0.5rem;
         }
       }
+    }
+    #sec2::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
     }
     #sec3 {
       @include flexLayout(column);
@@ -64,29 +93,34 @@
       @include column(flex-start);
       gap: 2rem;
       width: 100%;
-      padding: 1rem;
+      padding: 1rem 0;
       position: relative;
       top: 10%;
+      z-index: 2;
+      // background: black;
       h2 {
         width: 70%;
+        margin: 0 1rem;
         font: 500 1rem $font-prim;
+        color: #404040;
       }
 
       .stack {
         @include flexLayout(row wrap);
         @include row(center);
         @include column(center);
-        width: 90%;
+        width: 99%;
         height: 10rem;
         margin: 0 auto;
-        gap: 2rem;
+        gap: 0.5rem;
         list-style: none;
 
         .image2 {
           @include gridCenter;
-          width: 40%;
-          height: 8rem;
+          width: 47%;
+          height: 10rem;
           font: 500 1rem $font-sec;
+          border-radius: 0.6rem;
         }
         .mobilehidden {
           display: none;
@@ -106,13 +140,27 @@
       display: none;
     }
 
+    #main-img {
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
+
     #sec1 {
       padding: 2rem 1rem;
       width: 90%;
+      position: relative;
+      z-index: 5;
 
       p {
         width: 75%;
         text-align: left;
+        font: 300 1rem $font-prim;
+        color: #404040;
+        line-height: 2rem;
       }
     }
     #sec2 {
@@ -123,6 +171,10 @@
       height: 10rem;
       width: 100%;
       overflow-x: scroll;
+      position: relative;
+      z-index: 5;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
 
       .cardCover {
         @include gridCenter;
@@ -130,6 +182,7 @@
         padding: 1rem;
         min-width: 8rem;
         max-width: 8rem;
+
         height: 8rem;
         border-radius: 0.9rem;
         margin: auto 0;
@@ -139,6 +192,8 @@
           width: 4rem;
           height: 4rem;
           font-size: 2rem;
+          color: #008000;
+          outline: 1px solid #00800081;
           padding: 1rem;
           border-radius: 3rem;
           border: 1px solid hsla(0, 0%, 0%, 0.6);
@@ -150,24 +205,36 @@
         }
       }
     }
+    #sec2::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
+    }
     #sec3 {
       @include flexLayout(column);
       @include row(flex-start);
       gap: 2rem;
       padding: 1rem;
       width: 90%;
+      position: relative;
+      z-index: 5;
 
-      h3 {
-        width: 50%;
+      h2 {
+        width: 70%;
+        margin: 0 1rem;
+        font: 500 1.3rem $font-prim;
+        color: #404040;
       }
       .stack {
         @include flexLayout(row wrap);
         @include row(center);
-        gap: 2.5rem;
+        gap: 3rem;
         width: 33rem;
+        width: 100%;
         padding: 1rem 2rem;
         margin: 0 auto;
         border-radius: 1rem;
+        border: 1px solid #00800054;
 
         .image2 {
           @include gridCenter;
@@ -180,17 +247,17 @@
         .one,
         .three,
         .six {
-          width: 5rem;
-          height: 5rem;
+          width: 6rem;
+          height: 6rem;
         }
         .two,
         .four {
-          width: 9rem;
-          height: 9rem;
+          width: 10rem;
+          height: 10rem;
         }
         .five {
-          width: 7rem;
-          height: 7rem;
+          width: 8rem;
+          height: 8rem;
         }
       }
     }
@@ -201,13 +268,27 @@
     @include flexLayout(row wrap);
     @include row(center);
     gap: 2rem;
+    background: hsl(0, 0%, 10%);
+    // height: 100%;
+
+    #main-img {
+      width: 100vw;
+      height: 60%;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
 
     #sec1 {
       @include flexLayout(column);
       @include column(center);
       width: 80%;
       flex: 40%;
+      margin: 1rem 0;
       padding: 0.5rem;
+      position: relative;
+      z-index: 5;
 
       p {
         width: 80%;
@@ -229,9 +310,11 @@
       @include flexLayout(row);
       @include row(space-around);
       flex: 90%;
+      height: 10rem;
       width: 100%;
       padding: 1.4rem;
-      height: 10rem;
+      position: relative;
+      z-index: 5;
 
       .cardCover {
         @include flexLayout(row);
@@ -243,28 +326,34 @@
 
         .image1 {
           @include gridCenter;
-          border-radius: 1.8rem;
+          border-radius: 2rem;
           width: 4rem;
           height: 4rem;
           font-size: 2.5rem;
+          color: #008000;
+          outline: 1px solid #00800081;
         }
 
         .imageDesc {
           @include gridCenter;
-          height: 50%;
+          height: 40%;
           width: 5rem;
           font: 700 1rem $font-sec;
+          outline: 1px solid #00800081;
+          border-radius: 0.7rem;
         }
       }
     }
     #sec3 {
       @include flexLayout(column);
       @include row(center);
+      gap: 1.5rem;
       flex: 90%;
       padding: 2rem;
-      gap: 1.5rem;
+      position: relative;
+      z-index: 5;
 
-      h2{
+      h2 {
         margin: 0 2.5rem;
         width: 50%;
         font: 500 1.3rem $font-prim;
@@ -282,7 +371,7 @@
         .image2 {
           @include gridCenter;
           width: 15rem;
-          height: 10rem;
+          height: 15rem;
           flex: 30%;
           border-radius: 0.5rem;
         }
