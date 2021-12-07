@@ -1,8 +1,9 @@
 <template>
-  <header id="header" class="navbar has-shadow">
-    <i class="navbar-brand">
-      <h1 id="title" class="navbar-item">{{ title }}</h1></i
-    >
+  <header id="header" class="navbar">
+    <object data="avatar.jpg" class="navbar-brand" type="image/jpg">
+      <h1 src="dafault.jpg" id="title" class="navbar-item"></h1>
+    </object>
+
     <nav class="switchtabs" id="hiddenMob">
       <div class="footerContainer">
         <router-link class="links" :to="{ name: 'Home' }" id="home"
@@ -14,7 +15,7 @@
         </router-link>
       </div>
     </nav>
-    <i class="navbar-end"><i id="user" class="fas fa-user-circle"></i></i>
+    <router-link :to="{ name: 'SignUp'}" class="navbar-end"><i id="user" class="fas fa-user-circle"></i></router-link>
   </header>
 </template>
 <script lang="ts">
