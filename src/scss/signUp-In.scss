@@ -1,8 +1,101 @@
 @import "./_presets.scss";
+@media (min-width: 1024px) {
+  #main {
+    @include flexLayout(column);
+    @include column(center);
+    @include row(flex-start);
+    background: $background-sec;
+    overflow: hidden;
 
-#main {
-  .mainCircle {
-    #form {
+    .circle {
+      width: 34%;
+      height: 24rem;
+      margin: 0.5rem;
+      border-radius: 48%;
+      background: hsl(0, 0%, 98%);
+      position: absolute;
+      top: 8rem;
+    }
+    .ion {
+      // color: #0275d8;
+      color: #008000;
+    }
+    .mainContainer {
+      @include flexLayout(column);
+      @include column(center);
+      @include row(center);
+      // @include gridCenter;
+      gap: 3rem;
+      width: 30%;
+      height: 33rem;
+      padding: 0.4rem 0.8rem;
+      margin: 5rem 0;
+      border: 1px solid rgba(190, 190, 190, 0.267);
+      border-radius: 0.8rem;
+      position: relative;
+      z-index: 2;
+      background: $background-prim;
+
+      #titleSpan {
+        @include flexLayout(row);
+        @include row(space-between);
+        width: 95%;
+        padding: 0 0.8rem;
+        font: 500 1rem $font-prim;
+
+        .ion {
+          margin: auto 0;
+          width: 2rem;
+          height: 1rem;
+        }
+      }
+
+      #form {
+        @include gridCenter;
+        width: 95%;
+        height: 16rem;
+        padding: 0 0.3rem;
+
+        .input {
+          @include flexLayout(row);
+          border-radius: 0.7rem;
+          border: 1px solid #0274d823;
+
+          .inputBox {
+            width: 100%;
+            padding: 0.5rem 0.8rem;
+            border: none;
+            border-radius: 0.7rem;
+            outline: none;
+            font-family: $font-prim;
+          }
+          img {
+            width: 2rem;
+            height: 0.9rem;
+            // border: 1px solid #0275d8;
+            border: 1px solid #008000;
+          }
+        }
+        .formBtn {
+          width: 100%;
+          padding: 0.7rem;
+          border: none;
+          border-radius: 0.5rem;
+          background: #0275d8;
+          background: #008000;
+          color: $background-prim;
+        }
+      }
+      #footer {
+        width: 100%;
+        text-align: center;
+        font: 400 0.89rem $font-prim;
+
+        .route {
+          // color: #0275d8;
+          color: #008000;
+        }
+      }
     }
   }
 }
@@ -33,7 +126,8 @@
       top: 8rem;
     }
     .ion {
-      color: #0275d8;
+      // color: #0275d8;
+      color: #008000;
     }
     .mainContainer {
       @include flexLayout(column);
@@ -55,6 +149,7 @@
         @include row(space-between);
         width: 95%;
         padding: 0 0.8rem;
+        font: 500 1rem $font-prim;
 
         .ion {
           margin: auto 0;
@@ -71,20 +166,22 @@
 
         .input {
           @include flexLayout(row);
-          border-radius: .7rem;
+          border-radius: 0.7rem;
           border: 1px solid #0274d823;
-          
+
           .inputBox {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.5rem 0.8rem;
             border: none;
-            border-radius: .7rem;
+            border-radius: 0.7rem;
             outline: none;
+            font-family: $font-prim;
           }
           img {
             width: 2rem;
             height: 0.9rem;
-            border: 1px solid #0275d8;
+            // border: 1px solid #0275d8;
+            border: 1px solid #008000;
           }
         }
         .formBtn {
@@ -93,15 +190,18 @@
           border: none;
           border-radius: 0.5rem;
           background: #0275d8;
+          background: #008000;
           color: $background-prim;
         }
       }
       #footer {
         width: 100%;
         text-align: center;
-        font-size: 0.89rem;
-        .route{
-          color: #0275d8;
+        font: 400 0.89rem $font-prim;
+
+        .route {
+          // color: #0275d8;
+          color: #008000;
         }
       }
     }

@@ -4,19 +4,19 @@
     <div class="mainContainer">
       <span id="titleSpan">
         <h1 id="title">{{ title }}</h1>
-        <ion-icon class="ion" name="close"></ion-icon>
+        <i class="fas fa-times ion"></i>
       </span>
       <form id="form">
         <span class="input">
-          <ion-icon class="ion" name="person"></ion-icon>
+          <i class="fas fa-user-circle ion"></i>
           <input type="text" class="inputBox" placeholder="Firstname" />
         </span>
         <span class="input lastname">
-          <ion-icon class="ion" name="person"></ion-icon>
+          <i class="fas fa-user-circle ion"></i>
           <input type="text" class="inputBox" placeholder="Lastname"
         /></span>
         <span class="input email">
-          <ion-icon class="ion" name="at"></ion-icon>
+          <i class="fas fa-at ion"></i>
           <input type="email" class="inputBox" placeholder="Email"
         /></span>
         <button type="submit" class="formBtn">SIGN UP</button>

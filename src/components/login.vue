@@ -4,15 +4,15 @@
     <div class="mainContainer">
       <span id="titleSpan">
         <h1 id="title">{{ title }}</h1>
-        <ion-icon class="ion" name="close"></ion-icon>
+        <i class="fas fa-times ion"></i>
       </span>
       <form id="form">
         <span class="input email">
-          <ion-icon class="ion" name="at"></ion-icon>
+          <i class="fas fa-at ion"></i>
           <input type="email" class="inputBox" placeholder="Email"
         /></span>
         <span class="input password">
-          <ion-icon class="ion" name="lock"></ion-icon>
+          <i class="fas fa-lock ion"></i>
           <input type="password" class="inputBox" placeholder="Password" />
         </span>
         <button type="submit" class="formBtn">SIGN UP</button>
