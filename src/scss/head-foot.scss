@@ -3,19 +3,16 @@
   #header {
     @include flexLayout(row);
     @include row(space-between);
+    @include position(fixed, 99);
     gap: 3.5rem;
     width: 100%;
     padding: 0 1rem;
     background: transparent;
-    position: relative;
-    z-index: 99;
 
     #title {
       @include gridCenter;
-      width: 140px;
-      height: 35px;
+      @include dimension(140px, 35px);
       background: url(../assets/logo5X.png) center;
-      position: relative;
     }
 
     .switchtabs {
@@ -27,9 +24,9 @@
         padding: 0.5rem;
         gap: 3rem;
 
-        .links{
-          font: 400 .8rem $font-prim;
-          color:hsla(0, 0%, 80%, 0.6);
+        .links {
+          font: 400 0.8rem $font-prim;
+          color: hsla(0, 0%, 80%, 0.6);
         }
         .links:hover,
         .links:focus {
@@ -39,13 +36,22 @@
     }
     #user {
       @include gridCenter;
+      @include dimension(2rem, 2rem);
       margin: auto;
-      width: 2rem;
-      height: 2rem;
       font-size: 1.5rem;
+      color: #008000;
       border-radius: 12.2rem;
-      border: 1px solid #ddd;
+      border: 1px dashed hsla(0, 0%, 80%, 0.664);
     }
+    #user:hover {
+      transform: scale(0.98);
+      transition: all 0.3s ease-in;
+      border: 1px dotted hsla(0, 0%, 80%, 0.664);
+    }
+  }
+  #header:hover {
+    background: hsla(0, 0%, 30%, 0.274);
+    transition: all 0.4s ease-in-out;
   }
   #footer {
     display: none;
@@ -57,10 +63,9 @@
     @include flexLayout(row);
     @include row(space-between);
     @include column(center);
+    @include position(relative, 99);
     width: 100%;
     padding: 0 2.5rem;
-    position: relative;
-    z-index: 99;
     background: transparent;
 
     #hiddenMob {
@@ -68,17 +73,13 @@
     }
     #title {
       @include gridCenter;
-      width: 140px;
-      height: 35px;
+      @include dimension(140px, 35px);
       background: url(../assets/logo5X.png) center;
-      position: relative;
     }
     #user {
       @include gridCenter;
+      @include dimension(2rem, 2rem);
       margin: auto;
-      width: 2rem;
-      height: 2rem;
-      // padding: .5rem 0;
       font-size: 1.5rem;
       border-radius: 12.2rem;
       color: #008000;
@@ -88,13 +89,11 @@
   #footer {
     @include flexLayout(row);
     @include row(center);
+    @include position(fixed, 99);
     width: 50%;
     padding: 0.3rem;
     border-radius: 1.8rem;
-    // background: hsla(0, 0%, 0%, 0.6);
     background: #00800054;
-    position: fixed;
-    z-index: 99;
     bottom: 0.4rem;
 
     .footerContainer {
@@ -106,10 +105,9 @@
       #home {
         @include gridCenter;
         border-radius: 1.3rem;
-        overflow: hidden;
-        position: relative;
-        background: hsla(0, 0%, 50%, 0.6);
         outline: 1px solid rgba(0, 0, 0, 0.521);
+        background: hsla(0, 0%, 50%, 0.6);
+        overflow: hidden;
         img {
           padding: 0.4rem;
         }
@@ -117,9 +115,9 @@
       #search {
         @include gridCenter;
         border-radius: 1.3rem;
-        overflow: hidden;
         background: hsla(0, 0%, 50%, 0.6);
         outline: 1px solid rgba(0, 0, 0, 0.521);
+        overflow: hidden;
         img {
           padding: 0.4rem;
         }
@@ -133,11 +131,10 @@
     @include flexLayout(row);
     @include row(space-between);
     @include column(center);
+    @include position(fixed, 2);
     width: 100%;
     padding: 0 0.3rem;
-    position: fixed;
     top: 0;
-    z-index: 2;
     background: transparent;
 
     #hiddenMob {
@@ -146,20 +143,15 @@
 
     #title {
       @include gridCenter;
-      width: 140px;
-      height: 35px;
+      @include dimension(140px, 35px);
       background: url(../assets/logo5X.png) center;
-      position: relative;
     }
     #user {
       @include gridCenter;
+      @include dimension(2rem, 2rem);
       margin: auto;
-      width: 2rem;
-      height: 2rem;
-      // padding: .5rem 0;
       font-size: 1.5rem;
       border-radius: 12.2rem;
-      position: relative;
       color: #008000;
     }
   }
@@ -168,13 +160,11 @@
   #footer {
     @include flexLayout(row);
     @include row(center);
+    @include position(fixed, 99);
     width: 85%;
     padding: 0.3rem;
     border-radius: 1.8rem;
-    // background: hsla(0, 0%, 0%, 0.6);
     background: #00800054;
-    position: fixed;
-    z-index: 99;
     bottom: 0.2rem;
 
     .footerContainer {
@@ -187,8 +177,6 @@
         @include gridCenter;
         border-radius: 1.3rem;
         overflow: hidden;
-        position: relative;
-        // background: hsla(0, 0%, 50%, 0.6);
         background: hsla(0, 0%, 10%, 0.6);
         outline: 1px solid rgba(0, 0, 0, 0.521);
         img {
@@ -198,10 +186,9 @@
       #search {
         @include gridCenter;
         border-radius: 1.3rem;
-        overflow: hidden;
-        // background: hsla(0, 0%, 50%, 0.6);
-        background: hsla(0, 0%, 10%, 0.6);
         outline: 1px solid rgba(0, 0, 0, 0.521);
+        overflow: hidden;
+        background: hsla(0, 0%, 10%, 0.6);
         img {
           padding: 0.4rem;
         }

@@ -16,6 +16,14 @@
   display: grid;
   place-items: center;
 }
+@mixin dimension($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin position($pos, $index) {
+  position: $pos;
+  z-index: $index;
+}
 $background-prim: hsl(0, 0%, 99%);
 $background-sec: hsl(0, 0%, 93%);
 $font-prim: 'Rubik', sans-serif;

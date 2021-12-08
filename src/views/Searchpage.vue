@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <img src="../assets/image4.jpg" id="main-img" alt="" />
+    <img loading="lazy" src="../assets/image4.jpg" id="main-img" alt="" />
     <Header :title="title" />
     <form>
       <span class="nav">
@@ -18,13 +18,26 @@
           <img src="../assets/image1.jpg" alt="" />
           <p>Image One</p>
         </li>
-        <li>Y</li>
-        <li>Z</li>
-        <li>M</li>
-        <li>M</li>
-        <li>M</li>
-        <li>M</li>
-        <li>M</li>
+        <li>
+          <img src="../assets/image4.jpg" alt="" />
+          <p>Image One</p>
+        </li>
+        <li>
+          <img src="../assets/image5.jpg" alt="" />
+          <p>Image One</p>
+        </li>
+        <li>
+          <img src="../assets/image6.jpg" alt="" />
+          <p>Image One</p>
+        </li>
+        <li>
+          <img src="../assets/image7.jpg" alt="" />
+          <p>Image One</p>
+        </li>
+        <li>
+          <img src="../assets/image3.jpg" alt="" />
+          <p>Image One</p>
+        </li>
       </ul>
     </section>
     <Footer />

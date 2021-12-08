@@ -1,12 +1,12 @@
 <template>
   <div id="main">
-    <img src="../assets/image4.jpg" id="main-img" alt="" />
+    <img loading="lazy" src="../assets/image4.jpg" id="main-img" alt="" />
     <Header :title="title" />
     <section id="sec1">
       <p>
         Searching for photo collecions is as easy as typing in some few words
         and baam! your gallery. Go through our large repository of images and
-        find the pixel-perfect photo you desire - Nette.
+        find the pixel-perfect photo you desire for your personal projects or wallpaper - proudly by Nette.
       </p>
     </section>
     <section class="image" id="mobilehidden">
@@ -37,12 +37,24 @@
     <section id="sec3">
       <h2>Exhibition</h2>
       <div class="stack">
-        <img src="../assets/image7.jpg" class="image2 one" />
-        <img src="../assets/image3.jpg" class="image2 two" />
-        <img src="../assets/image1.jpg" class="image2 three mobilehidden" />
-        <img src="../assets/image2.jpg" class="image2 four mobilehidden" />
-        <img src="../assets/image6.jpg" class="image2 five mobilehidden" />
-        <img src="../assets/image4.jpg" class="image2 six mobilehidden" />
+        <li class="one">
+          <img src="../assets/image7.jpg" class="image2 one" />
+        </li>
+        <li class="two">
+          <img src="../assets/image3.jpg" class="image2 two" />
+        </li>
+        <li class="three mobilehidden">
+          <img src="../assets/image1.jpg" class="image2" />
+        </li>
+        <li class="four mobilehidden">
+          <img src="../assets/image2.jpg" class="image2" />
+        </li>
+        <li class="five mobilehidden">
+          <img src="../assets/image6.jpg" class="image2" />
+        </li>
+        <li class="six mobilehidden">
+          <img src="../assets/image4.jpg" class="image2" />
+        </li>
       </div>
     </section>
     <Footer />
@@ -50,7 +62,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref, toRefs } from "vue";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 
@@ -58,8 +70,11 @@ export default defineComponent({
   setup() {
     const title = ref<String>("𝘕𝘦𝘵𝘵𝘦");
 
+    const methods = reactive({})
+
     return {
       title,
+      ...toRefs(methods)
     };
   },
   components: { Header, Footer },

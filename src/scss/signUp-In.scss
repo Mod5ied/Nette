@@ -17,14 +17,12 @@
       top: 8rem;
     }
     .ion {
-      // color: #0275d8;
       color: #008000;
     }
     .mainContainer {
       @include flexLayout(column);
       @include column(center);
       @include row(center);
-      // @include gridCenter;
       gap: 3rem;
       width: 30%;
       height: 33rem;
@@ -58,7 +56,7 @@
 
         .input {
           @include flexLayout(row);
-          border-radius: 0.7rem;
+          border-radius: 0.5rem;
           border: 1px solid #0274d823;
 
           .inputBox {
@@ -69,12 +67,18 @@
             outline: none;
             font-family: $font-prim;
           }
+
           img {
             width: 2rem;
             height: 0.9rem;
             // border: 1px solid #0275d8;
             border: 1px solid #008000;
           }
+        }
+        .input:focus,
+        .input:hover {
+          border: 2px solid #0274d823;
+          outline: 2px solid #0274d823;
         }
         .formBtn {
           width: 100%;
@@ -92,7 +96,6 @@
         font: 400 0.89rem $font-prim;
 
         .route {
-          // color: #0275d8;
           color: #008000;
         }
       }

@@ -4,14 +4,18 @@
     @include flexLayout(column);
     @include column(center);
     gap: 1rem;
-
+    background: hsl(0, 0%, 10%);
+    #main-img {
+      @include dimension(100vw, 74%);
+      @include position(absolute, 2);
+      background-size: cover;
+      top: 0;
+    }
     form {
       @include gridCenter;
-      margin: 0 1rem;
-      width: 85%;
-      height: 5rem;
-      margin: 3rem 0;
-
+      @include position(relative, 5);
+      @include dimension(85%, 5rem);
+      margin: 7rem 0;
       .nav {
         @include flexLayout(row);
         @include row(center);
@@ -22,21 +26,22 @@
         .inputBox {
           width: 100%;
           padding: 0.5rem 3.5rem;
-          border: none;
           outline: none;
-          border: 1px solid #135bbf42;
           border: none;
           border-radius: 1.5rem;
-          background: hsla(0, 0%, 0%, 0.418);
-          color: hsl(0, 0%, 80%);
+          background: hsla(0, 0%, 30%, 0.418);
+          color: $background-sec;
           font: 400 1.1rem $font-prim;
         }
         .searchBtn {
           position: absolute;
-          left: 34%;
+          left: 31.3%;
           border-radius: 1.2rem;
           padding: 0.38rem;
           background: hsla(0, 0%, 0%, 0.3);
+        }
+        .searchBtn:hover {
+          background: #008000d3;
         }
         .inputBox:focus {
           border: none;
@@ -44,6 +49,7 @@
       }
     }
     .gallery {
+      @include position(relative, 5);
       width: 85%;
 
       .galleryContainer {
@@ -60,13 +66,13 @@
           gap: 0.3rem;
           max-width: 20rem;
           min-width: 20rem;
-          flex: 28%;
           height: 17rem;
+          flex: 28%;
           border-radius: 0.4rem;
+          outline: 1px solid #00800070;
           overflow: hidden;
 
           img {
-            position: relative;
             width: 100%;
             height: 100%;
           }
@@ -76,10 +82,12 @@
             width: 100%;
             text-align: center;
             font: 500 1rem $font-prim;
+            color: #008000fa;
             display: none;
           }
         }
         li:hover {
+          transition: all 1s ease-in;
           p {
             display: block;
           }
@@ -93,13 +101,18 @@
     @include flexLayout(column);
     @include column(center);
     gap: 1rem;
-
+    background: hsl(0, 0%, 10%);
+    #main-img {
+      @include dimension(100vw, 100%);
+      @include position(absolute, 2);
+      background-size: cover;
+      top: 0;
+    }
     form {
       @include gridCenter;
-      width: 95%;
-      height: 5rem;
+      @include position(relative, 5);
+      @include dimension(95%, 5rem);
       margin: 1rem 0;
-
       .nav {
         @include flexLayout(row);
         @include row(center);
@@ -108,30 +121,33 @@
         padding: 0.6em 0.9rem;
 
         .inputBox {
-          width: 100%;
+          width: 98%;
           padding: 0.6rem 3.5rem;
-          border: none;
           outline: none;
-          border: 1px solid #135bbf42;
           border: none;
           border-radius: 1.5rem;
-          background: hsla(0, 0%, 0%, 0.418);
+          background: hsla(0, 0%, 30%, 0.418);
           color: $background-sec;
           font: 450 1rem $font-prim;
         }
         .searchBtn {
           position: absolute;
-          left: 19%;
+          left: 17.7%;
           border-radius: 1.2rem;
           padding: 0.38rem;
           background: hsla(0, 0%, 0%, 0.3);
         }
+        .searchBtn:hover,
+        .searchBtn:focus {
+          background: #008000d3;
+        }
         .inputBox:focus {
-          border: 1px solid hsla(0, 0%, 0%, 0.192);
+          border: none;
         }
       }
     }
     .gallery {
+      @include position(relative, 5);
       padding: 0.5rem;
       width: 85%;
 
@@ -150,12 +166,11 @@
           min-width: 45%;
           height: 16rem;
           border-radius: 0.4rem;
+          outline: 1px solid #00800070;
           overflow: hidden;
 
           img {
-            position: relative;
-            width: 100%;
-            height: 100%;
+            @include dimension(100%, 100%);
           }
           p {
             width: 100%;
@@ -171,25 +186,19 @@
     @include flexLayout(column);
     @include column(center);
     gap: 1rem;
-
+    background: hsl(0, 0%, 10%);
     #main-img {
-      width: 100vw;
-      height: 100vh;
+      @include dimension(100vw, 100%);
+      @include position(absolute, 2);
       background-size: cover;
-      position: absolute;
       top: 0;
-      z-index: 2;
     }
-
     form {
       @include gridCenter;
-      width: 95%;
-      height: 5rem;
+      @include position(relative, 5);
+      @include dimension(95%, 5rem);
       margin: 1rem 0;
-      position: relative;
       top: 4rem;
-      z-index: 5;
-
       .nav {
         @include flexLayout(row);
         @include row(center);
@@ -222,33 +231,26 @@
       }
     }
     .gallery {
+      @include position(relative, 5);
       padding: 0.5rem;
       width: 95%;
-      position: relative;
       top: 4rem;
-      z-index: 5;
-
       .galleryContainer {
         @include flexLayout(row wrap);
         @include row(center);
         max-width: 100%;
         gap: 1rem;
         list-style: none;
-
         li {
           @include flexLayout(column);
           @include column(center);
+          @include dimension(47%, 12rem);
           gap: 0.3rem;
-          width: 47%;
-          height: 12rem;
           border-radius: 0.4rem;
           overflow: hidden;
           outline: 1px solid #00800081;
-
           img {
-            position: relative;
-            width: 100%;
-            height: 100%;
+            @include dimension(100%, 100%);
           }
           p {
             width: 100%;

@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="navbar">
     <object data="avatar.jpg" class="navbar-brand" type="image/jpg">
-      <h1 src="dafault.jpg" id="title" class="navbar-item"></h1>
+      <h1  id="title" class="navbar-item"></h1>
     </object>
 
     <nav class="switchtabs" id="hiddenMob">
@@ -15,7 +15,9 @@
         </router-link>
       </div>
     </nav>
-    <router-link :to="{ name: 'SignUp'}" class="navbar-end"><i id="user" class="fas fa-user-circle"></i></router-link>
+    <router-link :to="{ name: 'SignUp' }" class="navbar-end"
+      ><i id="user" class="fas fa-user-circle"></i
+    ></router-link>
   </header>
 </template>
 <script lang="ts">
