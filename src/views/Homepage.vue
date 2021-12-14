@@ -6,7 +6,8 @@
       <p>
         Searching for photo collecions is as easy as typing in some few words
         and baam! your gallery. Go through our large repository of images and
-        find the pixel-perfect photo you desire for your personal projects or wallpaper - proudly by Nette.
+        find the pixel-perfect photo you desire for your personal projects or
+        wallpaper - proudly by Nette.
       </p>
     </section>
     <section class="image" id="mobilehidden">
@@ -36,25 +37,25 @@
     </section>
     <section id="sec3">
       <h2>Exhibition</h2>
-      <div class="stack">
-        <li class="one">
+      <div class="stack" id="list">
+        <!-- <li class="sec3-Li" id="one">
           <img src="../assets/image7.jpg" class="image2 one" />
         </li>
-        <li class="two">
+        <li class="sec3-Li" id="two">
           <img src="../assets/image3.jpg" class="image2 two" />
         </li>
-        <li class="three mobilehidden">
+        <li class="sec3-Li mobilehidden" id="three">
           <img src="../assets/image1.jpg" class="image2" />
         </li>
-        <li class="four mobilehidden">
+        <li class="sec3-Li mobilehidden" id="four">
           <img src="../assets/image2.jpg" class="image2" />
         </li>
-        <li class="five mobilehidden">
+        <li class="sec3-Li mobilehidden" id="five">
           <img src="../assets/image6.jpg" class="image2" />
         </li>
-        <li class="six mobilehidden">
+        <li class="sec3-Li mobilehidden" id="six">
           <img src="../assets/image4.jpg" class="image2" />
-        </li>
+        </li> -->
       </div>
     </section>
     <Footer />
@@ -62,19 +63,54 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs } from "vue";
+import { defineComponent, reactive, ref, toRefs, unref } from "vue";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 
 export default defineComponent({
+  beforeMount() {
+    this.fetchImages();
+  },
+  // unmounted() {
+  //   this.removeTag();
+  // },
   setup() {
     const title = ref<String>("𝘕𝘦𝘵𝘵𝘦");
+    const searchString = "Art";
+    const accessKey = ref<String>(
+      `hV32rTvyumuVXBlHIJ4SchuzraqM1pjx8oWjab8bIF8`
+    );
+    const endPoint = `https://api.unsplash.com/search/photos?page=1&query=${searchString}&orientation=squarish&client_id=${accessKey.value}`;
+    const generateTag = async (item: any) => {
+      console.log("Hey this is item:", item);
+      const images = item;
+      images.forEach((image: any) => {
+        const listTag = document.createElement("li");
+        listTag.className = "sec3-Li";
 
-    const methods = reactive({})
+        const imgTag = document.createElement("img");
+        imgTag.src = image.urls.regular;
+        imgTag.alt = image.alt_description;
+        imgTag.className = "image2";
+
+        listTag.appendChild(imgTag);
+        document.getElementById("list").appendChild(listTag);
+      });
+    };
+    const methods = reactive({
+      fetchImages: async () => {
+        // methods.removeTag();
+        const resp = await fetch(unref(endPoint));
+        const data = await resp.json();
+        generateTag(data.results);
+      },
+      // removeTag: () => {},
+    });
+    methods.fetchImages();
 
     return {
       title,
-      ...toRefs(methods)
+      ...toRefs(methods),
     };
   },
   components: { Header, Footer },

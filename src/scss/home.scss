@@ -330,9 +330,10 @@
         margin: 0 auto;
         padding: 0.5rem;
         list-style: none;
-        li {
+
+        .sec3-Li{
           @include dimension(15rem, 15rem);
-          list-style: none;
+          list-style: none !important;
         }
         .image2 {
           @include gridCenter;
