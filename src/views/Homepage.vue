@@ -1,6 +1,11 @@
 <template>
   <div id="main">
-    <img loading="lazy" src="../assets/image4.jpg" id="main-img" alt="" />
+    <img
+      loading="lazy"
+      src="../assets/image4.jpg"
+      id="main-img"
+      alt="image_here"
+    />
     <Header :title="title" />
     <section id="sec1">
       <p>

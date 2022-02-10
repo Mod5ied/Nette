@@ -66,7 +66,7 @@ export default defineComponent({
       // TODO -should remove the images before component is scraped
     });
     const title = ref<String>("𝘕𝘦𝘵𝘵𝘦");
-    const userInput = ref("Search for anything!");
+    let userInput = ref("Search for anything!");
     const accessKey = ref<String>(
       `hV32rTvyumuVXBlHIJ4SchuzraqM1pjx8oWjab8bIF8`
     );

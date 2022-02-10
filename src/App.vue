@@ -22,6 +22,13 @@ export default defineComponent({
     gap: 1.5rem;
     flex: 90%;
     padding: 2rem;
+    
+    h2 {
+      @include dimension(70%, 20%);
+      margin: 0 1rem;
+      font: 500 1rem $font-prim;
+      color: hsla(0, 0%, 80%, 0.6);
+    }
     .stack {
       @include flexLayout(row wrap);
       @include row(space-around);
@@ -30,6 +37,7 @@ export default defineComponent({
       margin: 0 auto;
       padding: 0.5rem;
       list-style: none;
+      
 
       .newList {
         @include dimension(15rem, 15rem);
@@ -59,6 +67,8 @@ export default defineComponent({
       list-style: none;
       overflow: scroll;
       overflow-y: hidden;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
 
       .newList {
         min-width: 40%;
