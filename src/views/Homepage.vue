@@ -11,7 +11,7 @@
       </p>
     </section>
     <section class="image" id="mobilehidden">
-      <img src="../assets/IMG_20200701_225758.jpg" alt="" />
+      <!-- <img src="../assets/IMG_20200701_225758.jpg" alt="" /> -->
     </section>
     <section id="sec2">
       <div class="cardCover one">
@@ -37,80 +37,79 @@
     </section>
     <section id="sec3">
       <h2>Exhibition</h2>
-      <div class="stack" id="list">
-        <!-- <li class="sec3-Li" id="one">
-          <img src="../assets/image7.jpg" class="image2 one" />
-        </li>
-        <li class="sec3-Li" id="two">
-          <img src="../assets/image3.jpg" class="image2 two" />
-        </li>
-        <li class="sec3-Li mobilehidden" id="three">
-          <img src="../assets/image1.jpg" class="image2" />
-        </li>
-        <li class="sec3-Li mobilehidden" id="four">
-          <img src="../assets/image2.jpg" class="image2" />
-        </li>
-        <li class="sec3-Li mobilehidden" id="five">
-          <img src="../assets/image6.jpg" class="image2" />
-        </li>
-        <li class="sec3-Li mobilehidden" id="six">
-          <img src="../assets/image4.jpg" class="image2" />
-        </li> -->
-      </div>
+      <ul class="stack" id="list"></ul>
     </section>
     <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs, unref } from "vue";
+import {
+  defineComponent,
+  onBeforeMount,
+  onUnmounted,
+  reactive,
+  ref,
+  toRefs,
+  unref,
+} from "vue";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 
 export default defineComponent({
-  beforeMount() {
-    this.fetchImages();
-  },
-  // unmounted() {
-  //   this.removeTag();
-  // },
   setup() {
+    onBeforeMount(() => {
+      methods.fetchImages();
+      // TODO -should call and mount images upon component load
+    });
+    onUnmounted(() => {
+      methods.removeTag();
+      // TODO -should remove the images before component is scraped
+    });
     const title = ref<String>("𝘕𝘦𝘵𝘵𝘦");
-    const searchString = "Art";
+    const searchString = "Books";
     const accessKey = ref<String>(
       `hV32rTvyumuVXBlHIJ4SchuzraqM1pjx8oWjab8bIF8`
     );
-    const endPoint = `https://api.unsplash.com/search/photos?page=1&query=${searchString}&orientation=squarish&client_id=${accessKey.value}`;
+    const endPoint = `https://api.unsplash.com/search/photos?page=1&per_page=6&query=${searchString}&orientation=squarish&client_id=${accessKey.value}`;
+
     const generateTag = async (item: any) => {
-      console.log("Hey this is item:", item);
       const images = item;
       images.forEach((image: any) => {
         const listTag = document.createElement("li");
-        listTag.className = "sec3-Li";
+        listTag.classList.add("newList");
 
         const imgTag = document.createElement("img");
         imgTag.src = image.urls.regular;
         imgTag.alt = image.alt_description;
-        imgTag.className = "image2";
+        imgTag.classList.add("newImage");
 
         listTag.appendChild(imgTag);
-        document.getElementById("list").appendChild(listTag);
+        document.querySelector("#list")!.append(listTag); //ignore v-DOM probs.
       });
     };
     const methods = reactive({
       fetchImages: async () => {
-        // methods.removeTag();
-        const resp = await fetch(unref(endPoint));
-        const data = await resp.json();
-        generateTag(data.results);
+        methods.removeTag();
+        try {
+          const resp = await fetch(unref(endPoint));
+          if (!resp.ok) {
+            throw Error("An error occurred while fetching");
+          }
+          const data = await resp.json();
+          generateTag(data.results);
+        } catch (err) {
+          console.error(err);
+        }
       },
-      // removeTag: () => {},
+      removeTag: async () => {
+        document.querySelectorAll(".stack")!.forEach((li) => li.remove());
+      },
     });
-    methods.fetchImages();
 
     return {
-      title,
       ...toRefs(methods),
+      title,
     };
   },
   components: { Header, Footer },

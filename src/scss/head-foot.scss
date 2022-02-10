@@ -1,5 +1,5 @@
 @import "./_presets.scss";
-@media (min-width: 1024px) {
+@media (min-width: 1028px) {
   #header {
     @include flexLayout(row);
     @include row(space-between);
@@ -10,9 +10,10 @@
     background: transparent;
 
     #title {
-      @include gridCenter;
       @include dimension(140px, 35px);
-      background: url(../assets/logo5X.png) center;
+      margin: auto;
+      background: url(../assets/logo5X.png) center no-repeat;
+      background-size: cover;
     }
 
     .switchtabs {

@@ -85,8 +85,9 @@
       width: 100%;
       padding: 1rem 0;
       top: 10%;
+
       h2 {
-        @include dimension(70%, 100%);
+        @include dimension(70%, 20%);
         margin: 0 1rem;
         font: 500 1rem $font-prim;
         color: hsla(0, 0%, 80%, 0.6);
@@ -99,18 +100,6 @@
         margin: 0 auto;
         gap: 0.5rem;
         list-style: none;
-        li {
-          @include dimension(47%, 10rem);
-        }
-        .image2 {
-          @include gridCenter;
-          @include dimension(100%, 100%);
-          font: 500 1rem $font-sec;
-          border-radius: 0.6rem;
-        }
-        .mobilehidden {
-          display: none;
-        }
       }
     }
   }
@@ -208,34 +197,40 @@
         margin: 0 auto;
         border-radius: 1rem;
         border: 1px solid #00800054;
-        li {
+        li .newList {
           @include dimension(8rem, 8rem);
           list-style: none;
         }
-        .image2 {
+        img .newImage {
           @include gridCenter;
           @include dimension(100%, 100%);
           border-radius: 1rem;
           border: 1px solid hsla(0, 0%, 0%, 0.6);
           overflow: hidden;
         }
-        .one,
-        .three,
-        .six {
+        li:nth-child(1) {
           @include dimension(6rem, 6rem);
         }
-        .two,
-        .four {
+        li:nth-child(3) {
+          @include dimension(6rem, 6rem);
+        }
+        li:nth-child(6) {
+          @include dimension(6rem, 6rem);
+        }
+        li:nth-child(2) {
           @include dimension(10rem, 10rem);
         }
-        .five {
+        li:nth-child(4) {
+          @include dimension(10rem, 10rem);
+        }
+        li:nth-child(5) {
           @include dimension(8rem, 8rem);
         }
       }
     }
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1028px) {
   #main {
     @include flexLayout(row wrap);
     @include row(center);
@@ -309,39 +304,39 @@
         }
       }
     }
-    #sec3 {
-      @include flexLayout(column);
-      @include row(center);
-      @include position(relative, 5);
-      gap: 1.5rem;
-      flex: 90%;
-      padding: 2rem;
-      h2 {
-        margin: 0 2.5rem;
-        width: 50%;
-        font: 500 1.3rem $font-prim;
-        color: hsla(0, 0%, 80%, 0.6);
-      }
-      .stack {
-        @include flexLayout(row wrap);
-        @include row(space-around);
-        gap: 2rem;
-        width: 80%;
-        margin: 0 auto;
-        padding: 0.5rem;
-        list-style: none;
+    // #sec3 {
+    //   @include flexLayout(column);
+    //   @include row(center);
+    //   @include position(relative, 5);
+    //   gap: 1.5rem;
+    //   flex: 90%;
+    //   padding: 2rem;
+    //   h2 {
+    //     margin: 0 2.5rem;
+    //     width: 50%;
+    //     font: 500 1.3rem $font-prim;
+    //     color: hsla(0, 0%, 80%, 0.6);
+    //   }
+    //   .stack {
+    //     @include flexLayout(row wrap);
+    //     @include row(space-around);
+    //     gap: 2rem;
+    //     width: 80%;
+    //     margin: 0 auto;
+    //     padding: 0.5rem;
+    //     list-style: none;
 
-        .sec3-Li{
-          @include dimension(15rem, 15rem);
-          list-style: none !important;
-        }
-        .image2 {
-          @include gridCenter;
-          @include dimension(100%, 100%);
-          flex: 30%;
-          border-radius: 0.5rem;
-        }
-      }
-    }
+    //     .newList {
+    //       @include dimension(15rem, 15rem);
+    //       list-style: none !important;
+    //     }
+    //     .newImage {
+    //       @include gridCenter;
+    //       @include dimension(100%, 100%);
+    //       flex: 30%;
+    //       border-radius: 0.5rem;
+    //     }
+    //   }
+    // }
   }
 }

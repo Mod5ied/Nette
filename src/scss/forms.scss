@@ -83,11 +83,19 @@
         .formBtn {
           width: 100%;
           padding: 0.7rem;
-          border: none;
+          border: 1px solid transparent;
           border-radius: 0.5rem;
           background: #0275d8;
           background: #008000;
           color: $background-prim;
+          transition: all 0.3s ease-out;
+        }
+        .formBtn:hover {
+          transition: all 0.3s ease-in;
+          border: 1px solid #008000;
+          color: #008000;
+          background: transparent;
+          font-weight: 500;
         }
       }
       #footer {
@@ -105,8 +113,111 @@
 
 @media screen and (max-width: 1024px) {
   #main {
-    .mainCircle {
+    @include flexLayout(column);
+    @include column(center);
+    @include row(flex-start);
+    background: $background-sec;
+    overflow: hidden;
+
+    .circle {
+      width: 55%;
+      height: 20rem;
+      margin: 0.5rem;
+      border-radius: 48%;
+      background: hsl(0, 0%, 98%);
+      position: absolute;
+      top: 10rem;
+    }
+    .ion {
+      color: #008000;
+    }
+    .mainContainer {
+      @include flexLayout(column);
+      @include column(center);
+      @include row(center);
+      gap: 3rem;
+      width: 45%;
+      height: 33rem;
+      padding: 0.4rem 0.8rem;
+      margin: 5rem 0;
+      border: 1px solid rgba(190, 190, 190, 0.267);
+      border-radius: 0.8rem;
+      position: relative;
+      z-index: 2;
+      background: $background-prim;
+
+      #titleSpan {
+        @include flexLayout(row);
+        @include row(space-between);
+        width: 95%;
+        padding: 0 0.8rem;
+        font: 500 1rem $font-prim;
+
+        .ion {
+          margin: auto 0;
+          width: 2rem;
+          height: 1rem;
+        }
+      }
+
       #form {
+        @include gridCenter;
+        width: 95%;
+        height: 16rem;
+        padding: 0 0.3rem;
+
+        .input {
+          @include flexLayout(row);
+          border-radius: 0.5rem;
+          border: 1px solid #0274d823;
+
+          .inputBox {
+            width: 100%;
+            padding: 0.5rem 0.8rem;
+            border: none;
+            border-radius: 0.7rem;
+            outline: none;
+            font-family: $font-prim;
+          }
+
+          img {
+            width: 2rem;
+            height: 0.9rem;
+            // border: 1px solid #0275d8;
+            border: 1px solid #008000;
+          }
+        }
+        .input:focus,
+        .input:hover {
+          border: 2px solid #0274d823;
+          outline: 2px solid #0274d823;
+        }
+        .formBtn {
+          width: 100%;
+          padding: 0.7rem;
+          border: 1px solid transparent;
+          border-radius: 0.5rem;
+          background: #0275d8;
+          background: #008000;
+          color: $background-prim;
+          transition: all 0.3s ease-out;
+        }
+        .formBtn:hover {
+          transition: all 0.3s ease-in;
+          border: 1px solid #008000;
+          color: #008000;
+          background: transparent;
+          font-weight: 500;
+        }
+      }
+      #footer {
+        width: 100%;
+        text-align: center;
+        font: 400 0.89rem $font-prim;
+
+        .route {
+          color: #008000;
+        }
       }
     }
   }
@@ -195,6 +306,15 @@
           background: #0275d8;
           background: #008000;
           color: $background-prim;
+          transition: all 0.3s ease-in;
+        }
+        .formBtn:hover,
+        .formBtn:focus {
+          transition: all 0.3s ease-in;
+          border: 1px solid #008000;
+          color: #008000;
+          background: transparent;
+          font-weight: 500;
         }
       }
       #footer {
